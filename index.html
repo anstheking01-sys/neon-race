@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NEON RACE</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div class="logo">NEON<span>RACE</span></div><div id="status">غير مسجّل الدخول</div></header>
+  <main>
+    <section class="panel" id="accountPanel">
+      <h2>حساب اللاعب</h2><p class="muted">سجّل حسابًا لحفظ نتيجتك في لوحة الأرقام القياسية.</p>
+      <input id="username" placeholder="اسم اللاعب (للتسجيل فقط)" maxlength="20" autocomplete="nickname">
+      <input id="email" type="email" placeholder="البريد الإلكتروني" autocomplete="email">
+      <input id="password" type="password" placeholder="كلمة المرور (6 أحرف على الأقل)" autocomplete="current-password">
+      <div class="actions"><button id="signup">إنشاء حساب</button><button class="secondary" id="login">تسجيل الدخول</button><button class="secondary hidden" id="logout">تسجيل الخروج</button></div>
+      <p id="authMessage" class="message" aria-live="polite"></p>
+    </section>
+    <section class="panel gamePanel">
+      <div class="gameTitle"><div><h1>استعد للسباق</h1><p class="muted">تفادى السيارات واجمع المسافة حتى خط النهاية.</p></div><div class="timeBox"><small>الوقت</small><strong id="timer">00:00.000</strong></div></div>
+      <div id="game" aria-label="لعبة سباق سيارات"><div class="sky"></div><div class="road"><div class="lane lane1"></div><div class="lane lane2"></div><div id="obstacles"></div><div id="car">🏎️</div><div id="finish" class="hidden">FINISH</div></div><div class="hud"><span>المسافة: <b id="distance">0</b>%</span><span>النتيجة: <b id="score">0</b></span></div></div>
+      <div class="actions gameActions"><button id="start">ابدأ السباق</button><button id="left" class="secondary control">◀</button><button id="right" class="secondary control">▶</button></div>
+      <p id="gameMessage" class="message" aria-live="polite">استخدم ← → أو A و D للتحرك. على الهاتف استخدم الأزرار.</p>
+    </section>
+    <section class="panel"><div class="leaderHead"><h2>🏆 الأرقام القياسية</h2><button id="refresh" class="secondary">تحديث</button></div><ol id="leaderboard"><li class="muted">سجّل الدخول ثم اضغط تحديث.</li></ol></section>
+  </main>
+  <footer>NEON RACE · لعبة تجريبية منشورة عبر GitHub Pages</footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js"></script>
+</body></html>
